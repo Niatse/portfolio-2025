@@ -7,6 +7,10 @@ import Lua from "../icons/Lua.astro";
 import MySQL from "../icons/MySQL.astro";
 import Link from "../icons/Link.astro";
 import GitHub from "../icons/GitHub.astro";
+import Html5 from "../icons/Html5.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import Css from "../icons/Css.astro";
+import Sanity from "../icons/Sanity.astro";
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -33,6 +37,26 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: MySQL,
   },
+  HTML: {
+    name: "HTML5",
+    class: "bg-black text-white",
+    icon: Html5,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-black text-white",
+    icon: Css,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: JavaScript,
+  },
+  SANITY: {
+    name: "Sanity",
+    class: "bg-black text-white",
+    icon: Sanity,
+  },
 }
 const PROJECTS = [
   {
@@ -40,7 +64,7 @@ const PROJECTS = [
     description:
       "Servidor de Roleplay en FiveM con más de 3000 miembros en nuestra comunidad de Discord. Desarrollado con Lua, MySQL, HTML, CSS, NodeJs, Hosteado en VPs Linux & Windows.",
     link: "https://discord.gg/entrefronterasrp",
-    image: "/src/assets/efrp.webp",
+    image: "/images/efrp.webp",
     tags: [TAGS.LUA, TAGS.MYSQL],
   },
   {
@@ -48,9 +72,27 @@ const PROJECTS = [
     description:
       "Plataforma para gestion de finanzas, ingresos, egresos y graficos con estadisticas, hecho a medida para llevar un control sobre las finanzas del servidor EntreFronterasRP.",
     link: "https://adventjs.dev",
-    image: "/src/assets/EfrpDashboard.png",
+    image: "/images/EfrpDashboard.png",
     github: "https://github.com/Niatse/efrp-DashBoard",
         tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MYSQL],
+  },
+  {
+    title: "Coin Niatse - Crypto Data",
+    description:
+      "Pagina web en la cual se muestran las top 100 criptomonedas segun su MARKETCAP, con informacion detallada de cada una de ellas.",
+    link: "https://coiniatse.netlify.app/",
+    image: "/images/coiniatse.png",
+    github: "https://github.com/Niatse/CoinNiatse",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "WebHackology - Blog de tecnologia",
+    description:
+      "Blog de tecnologia en el cual se publican articulos sobre tecnologia, programacion, hacking, y mucho mas.",
+    link: "https://webhackology.vercel.app/",
+    image: "/images/webhackology.png",
+    github: "https://github.com/Niatse/webhackolog",
+        tags: [TAGS.NEXT, TAGS.SANITY,],
   },
 ]
 ---
@@ -59,10 +101,16 @@ const PROJECTS = [
       PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
     <div class="w-full md:w-1/2">
-      <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-        <img alt="Imagen" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-      </div>
-    </div>
+  <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+    <img  
+      alt="Imagen"  
+      class="w-full h-auto object-contain object-center md:scale-110 md:group-hover:scale-105"  
+      loading="lazy"  
+      src={image}  
+    />
+  </div>
+</div>
+
   
     <div class="w-full md:w-1/2 md:max-w-lg">
       <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
